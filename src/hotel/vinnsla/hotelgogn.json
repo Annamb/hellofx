@@ -1,0 +1,80 @@
+[
+ {
+   "city": "Reykjavik",
+   "hotelName": " Icelandic Apartments",
+   "rating": 9.2,
+   "price": 16400,
+   "stars": "4",
+   "phonenumber": "6224545",
+   "emailadress": "ia@ia.is",     
+   "address": " Urðahvarf 4",
+   "restaurant": "false",
+   "roomService": "false",
+   "airportpickup": "false"     
+ },
+ {
+   "city": "Reykjavik",
+   "hotelName": "Fosshótel",
+   "rating": 9.2,
+   "price": 16400,
+   "stars": "4",
+   "phonenumber": "6224545",
+   "emailadress": "ia@ia.is",     
+   "address": " Urðahvarf 4",
+   "restaurant": "false",
+   "roomService": "false",
+   "airportpickup": "false"     
+ },
+ {
+   "city": "Reykjavik",
+   "hotelName": "Hótel Holt",
+   "rating": 9.2,
+   "price": 16400,
+   "stars": "4",
+   "phonenumber": "6224545",
+   "emailadress": "ia@ia.is",     
+   "address": " Urðahvarf 4",
+   "restaurant": "false",
+   "roomService": "false",
+   "airportpickup": "false"     
+ },
+ {
+   "city": "Reykjavik",
+   "hotelName": "Hótel Reykjavík",
+   "rating": 9.2,
+   "price": 16400,
+   "stars": "4",
+   "phonenumber": "6224545",
+   "emailadress": "ia@ia.is",     
+   "address": " Urðahvarf 4",
+   "restaurant": "false",
+   "roomService": "false",
+   "airportpickup": "false"     
+ },
+ {
+   "city": "Reykjavik",
+   "hotelName": "Hótel 1",
+   "rating": 9.2,
+   "price": 16400,
+   "stars": "4",
+   "phonenumber": "6224545",
+   "emailadress": "ia@ia.is",     
+   "address": " Urðahvarf 4",
+   "restaurant": "false",
+   "roomService": "false",
+   "airportpickup": "false"     
+ },
+ {
+   "city": "Reykjavik",
+   "hotelName": "Hótel 2",
+   "rating": 9.2,
+   "price": 16400,
+   "stars": "4",
+   "phonenumber": "6224545",
+   "emailadress": "ia@ia.is",     
+   "address": " Urðahvarf 4",
+   "restaurant": "false",
+   "roomService": "false",
+   "airportpickup": "false"     
+ }
+]
