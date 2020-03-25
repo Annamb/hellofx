@@ -10,8 +10,7 @@ public class Hotel extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-
-        Parent root = FXMLLoader.load(getClass().getResource("/adal.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("adal.fxml"));
         primaryStage.setTitle("Hello World");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
