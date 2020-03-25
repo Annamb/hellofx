@@ -3,9 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Annam/OneDrive/Documents/NetBeansProjects/hellofx/src/hellofx/controller.java</file>
-            <file>file:/C:/Users/Annam/OneDrive/Documents/NetBeansProjects/hellofx/src/hellofx/Hellofx.java</file>
-            <file>file:/C:/Users/Annam/OneDrive/Documents/NetBeansProjects/hellofx/src/hellofx/hellofx.fxml</file>
+            <file>file:/C:/Users/Annam/OneDrive/Documents/NetBeansProjects/hellofx/src/hotel/controller.java</file>
+            <file>file:/C:/Users/Annam/OneDrive/Documents/NetBeansProjects/hellofx/src/hotel/Hotel.java</file>
+            <file>file:/C:/Users/Annam/OneDrive/Documents/NetBeansProjects/hellofx/src/hotel/adal.fxml</file>
+            <file>file:/C:/Users/Annam/OneDrive/Documents/NetBeansProjects/hellofx/src/hotel/vinnsla/hotelgogn.json</file>
+            <file>file:/C:/Users/Annam/OneDrive/Documents/NetBeansProjects/hellofx/src/hotel/vinnsla/lesaHotel.java</file>
+            <file>file:/C:/Users/Annam/OneDrive/Documents/NetBeansProjects/hellofx/src/hotel/vinnsla/Hotel.java</file>
+            <file>file:/C:/Users/Annam/OneDrive/Documents/NetBeansProjects/hellofx/nbproject/build-impl.xml</file>
         </group>
     </open-files>
 </project-private>
