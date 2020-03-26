@@ -15,6 +15,33 @@ public class Hotel {
     private int price,stars;
     private boolean restaurant,roomService,airportpickup;
 
+    public Hotel(String city, String hotelName, String phonenumber, String emailadress, String address, double rating, int price, int stars, boolean restaurant, boolean roomService, boolean airportpickup) {
+        this.city = city;
+        this.hotelName = hotelName;
+        this.phonenumber = phonenumber;
+        this.emailadress = emailadress;
+        this.address = address;
+        this.rating = rating;
+        this.price = price;
+        this.stars = stars;
+        this.restaurant = restaurant;
+        this.roomService = roomService;
+        this.airportpickup = airportpickup;
+    }
+
+    public Hotel(String city, String hotelName, String phonenumber, String emailadress, String address) {
+        this.city = city;
+        this.hotelName = hotelName;
+        this.phonenumber = phonenumber;
+        this.emailadress = emailadress;
+        this.address = address;
+        this.rating = 0.0;
+        this.price = 0;
+        this.stars = 0;
+        this.restaurant = false;
+        this.roomService = false;
+        this.airportpickup = false;
+    }
     public String getCity() {
         return city;
     }
@@ -103,19 +130,6 @@ public class Hotel {
         this.airportpickup = airportpickup;
     }
 
-    public Hotel(String city, String hotelName, String phonenumber, String emailadress, String address, double rating, int price, int stars, boolean restaurant, boolean roomService, boolean airportpickup) {
-        this.city = city;
-        this.hotelName = hotelName;
-        this.phonenumber = phonenumber;
-        this.emailadress = emailadress;
-        this.address = address;
-        this.rating = rating;
-        this.price = price;
-        this.stars = stars;
-        this.restaurant = restaurant;
-        this.roomService = roomService;
-        this.airportpickup = airportpickup;
-    }
     
     
     
