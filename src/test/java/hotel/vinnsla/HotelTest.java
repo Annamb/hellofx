@@ -1,25 +1,25 @@
 package hotel.vinnsla;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-class HotelTest {
+public class HotelTest {
     private Hotel hotel1, hotel2;
 
-    @BeforeEach
+    @Before
     public void setUp() {
         hotel1 = new Hotel("Reykjavik", "Nice Hotel",
                 "555-1122",
                 "nice@hotel.com", "Nice street 10");
         hotel2 = new Hotel("New York", "The Good Stay",
                 "111-2233",
-                "mail@good.com", "Broadway 101");
+                "mail@good.com", "Broadway 101", 3.3,
+                9000, 3, true, true, false);
     }
 
-    @AfterEach
+    @After
     public void tearDown() {
         hotel1 = null;
         hotel2 = null;
@@ -32,7 +32,7 @@ class HotelTest {
     }
 
     @Test
-    public void getEmailadress() {
+    public void getEmailAddress() {
         assertEquals("nice@hotel.com", hotel1.getEmailadress());
         assertEquals("mail@good.com", hotel2.getEmailadress());
     }
@@ -40,19 +40,21 @@ class HotelTest {
     @Test
     public void getPrice() {
         assertEquals(0, hotel1.getPrice());
-        assertEquals(0, hotel2.getPrice());
+        assertEquals(9000, hotel2.getPrice());
     }
 
     @Test
     public void getStars() {
         assertEquals(0, hotel1.getStars());
-        assertEquals(0, hotel2.getStars());
+        assertEquals(3, hotel2.getStars());
     }
 
 
     @Test
     public void isRestaurant() {
         assertEquals(false, hotel1.isRestaurant());
-        assertEquals(false, hotel2.isRestaurant());
+        assertEquals(true, hotel2.isRestaurant());
     }
+
+
 }
