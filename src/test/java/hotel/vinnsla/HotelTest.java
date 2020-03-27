@@ -44,6 +44,15 @@ public class HotelTest {
     }
 
     @Test
+    public void setPrice() {
+        hotel1.setPrice(100);
+        hotel2.setPrice(99);
+        assertEquals(100, hotel1.getPrice());
+        assertEquals(99, hotel2.getPrice());
+    }
+
+
+    @Test
     public void getStars() {
         assertEquals(0, hotel1.getStars());
         assertEquals(3, hotel2.getStars());
