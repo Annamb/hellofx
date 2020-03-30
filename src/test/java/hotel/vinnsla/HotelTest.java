@@ -1,3 +1,8 @@
+/*
+Hópur 8H
+Anna Margrét Benediktsdóttir amb33@hi.is
+Númi Steinn Baldursson nsb3@hi.is
+*/
 package hotel.vinnsla;
 
 import org.junit.After;
@@ -64,6 +69,5 @@ public class HotelTest {
         assertEquals(false, hotel1.isRestaurant());
         assertEquals(true, hotel2.isRestaurant());
     }
-
 
 }
