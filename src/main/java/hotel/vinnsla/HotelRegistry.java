@@ -8,31 +8,35 @@ import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
 
-import hotel.vinnsla.Hotel;
 
 
 /**
- *  Lesa inn lista af Hótelum
- * @author annam
+ * Hotel registry functions
+ * @author annam, nsb
  */
-public class lesaHotel {
-    
-    public List<Hotel> lesaHotel(){
+public class HotelRegistry {
 
-	Gson gson = new Gson();
-   
+    public HotelRegistry(){}
+    
+    public List<Hotel> getHotelList(){
+	    Gson gson = new Gson();
+
         try {
 
             BufferedReader br = new BufferedReader(new FileReader("src/hotel/vinnsla/hotelgogn.json"));
 
             TypeToken<List<Hotel>> token = new TypeToken<List<Hotel>>() {};
-            List<Hotel> hotel = gson.fromJson(br, token.getType());
+            List<Hotel> hotels = gson.fromJson(br, token.getType());
 
-            return hotel;
+            return hotels;
 
         } catch (IOException e) {
             e.printStackTrace();
             return Collections.emptyList();
         }
     }
+
+
+
+
 }

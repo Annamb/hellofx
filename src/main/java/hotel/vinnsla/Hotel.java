@@ -14,8 +14,11 @@ public class Hotel {
     private double rating;
     private int price,stars;
     private boolean restaurant,roomService,airportpickup;
+    private HotelRegistry hotelRegistry;
 
     public Hotel(String city, String hotelName, String phonenumber, String emailadress, String address, double rating, int price, int stars, boolean restaurant, boolean roomService, boolean airportpickup) {
+        hotelRegistry = new HotelRegistry();
+
         this.city = city;
         this.hotelName = hotelName;
         this.phonenumber = phonenumber;
@@ -30,6 +33,8 @@ public class Hotel {
     }
 
     public Hotel(String city, String hotelName, String phonenumber, String emailadress, String address) {
+        hotelRegistry = new HotelRegistry();
+
         this.city = city;
         this.hotelName = hotelName;
         this.phonenumber = phonenumber;
