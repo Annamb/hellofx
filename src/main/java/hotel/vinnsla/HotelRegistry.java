@@ -2,9 +2,8 @@ package hotel.vinnsla;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+
+import java.io.*;
 import java.util.Collections;
 import java.util.List;
 
@@ -22,17 +21,16 @@ public class HotelRegistry {
 	    Gson gson = new Gson();
 
         try {
-
-            BufferedReader br = new BufferedReader(new FileReader("src/hotel/vinnsla/hotelgogn.json"));
+            BufferedReader br = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream("/Data/hotelgogn.json")));
+//            BufferedReader br = new BufferedReader(new FileReader(new File("/Data/hotelgogn.json")));
 
             TypeToken<List<Hotel>> token = new TypeToken<List<Hotel>>() {};
             List<Hotel> hotels = gson.fromJson(br, token.getType());
 
             return hotels;
 
-        } catch (IOException e) {
-            e.printStackTrace();
-            return Collections.emptyList();
+        } finally {
+
         }
     }
 
