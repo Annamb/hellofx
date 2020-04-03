@@ -16,6 +16,10 @@ public class Hotel {
     private boolean restaurant,roomService,airportpickup;
     private HotelRegistry hotelRegistry;
 
+    @Override
+    public String toString(){
+        return (this.hotelName + ", " + this.city);
+    }
     public Hotel(String city, String hotelName, String phonenumber, String emailadress, String address, double rating, int price, int stars, boolean restaurant, boolean roomService, boolean airportpickup) {
         hotelRegistry = new HotelRegistry();
 
