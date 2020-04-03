@@ -1,7 +1,7 @@
-package hotel;
+package hotel.Controllers;
 
-import hotel.vinnsla.Hotel;
-import hotel.vinnsla.HotelRegistry;
+import hotel.Entities.Hotel;
+import hotel.Entities.HotelRegistry;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;

@@ -3,7 +3,7 @@ Hópur 8H
 Anna Margrét Benediktsdóttir amb33@hi.is
 Númi Steinn Baldursson nsb3@hi.is
 */
-package hotel.vinnsla;
+package hotel.Entities;
 
 import org.junit.After;
 import org.junit.Before;

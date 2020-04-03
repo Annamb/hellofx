@@ -1,4 +1,4 @@
-package hotel.vinnsla;
+package hotel.Entities;
 
 import org.junit.After;
 import org.junit.Before;

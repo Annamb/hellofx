@@ -1,6 +1,5 @@
-package hotel.vinnsla;
+package hotel.Entities;
 
-import java.awt.print.Book;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;

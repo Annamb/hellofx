@@ -1,10 +1,9 @@
-package hotel.vinnsla;
+package hotel.Entities;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.*;
-import java.util.Collections;
 import java.util.List;
 
 
