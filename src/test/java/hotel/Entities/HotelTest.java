@@ -21,7 +21,7 @@ public class HotelTest {
         hotel2 = new Hotel("New York", "The Good Stay",
                 "111-2233",
                 "mail@good.com", "Broadway 101", 3.3,
-                9000, 3, true, true, false);
+                 3, true, true, false);
     }
 
     @After
@@ -38,24 +38,9 @@ public class HotelTest {
 
     @Test
     public void getEmailAddress() {
-        assertEquals("nice@hotel.com", hotel1.getEmailadress());
-        assertEquals("mail@good.com", hotel2.getEmailadress());
+        assertEquals("nice@hotel.com", hotel1.getEmailAddress());
+        assertEquals("mail@good.com", hotel2.getEmailAddress());
     }
-
-    @Test
-    public void getPrice() {
-        assertEquals(0, hotel1.getPrice());
-        assertEquals(9000, hotel2.getPrice());
-    }
-
-    @Test
-    public void setPrice() {
-        hotel1.setPrice(100);
-        hotel2.setPrice(99);
-        assertEquals(100, hotel1.getPrice());
-        assertEquals(99, hotel2.getPrice());
-    }
-
 
     @Test
     public void getStars() {

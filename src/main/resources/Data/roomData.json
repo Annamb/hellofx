@@ -1,0 +1,65 @@
+[
+  {
+    "roomID": 1,
+    "hotelName": "Icelandic Apartments",
+    "numGuests": 4,
+    "isMinibar": false,
+    "isWheelchairAccess": true,
+    "isRoomService": true,
+    "price": 5500
+  },
+  {
+    "roomID": 2,
+    "hotelName": "Icelandic Apartments",
+    "numGuests": 2,
+    "isMinibar": true,
+    "isWheelchairAccess": true,
+    "isRoomService": true,
+    "price": 10500
+  },
+  {
+    "roomID": 1,
+    "hotelName": "Fosshótel",
+    "numGuests": 1,
+    "isMinibar": true,
+    "isWheelchairAccess": true,
+    "isRoomService": true,
+    "price": 6300
+  },
+  {
+    "roomID": 1,
+    "hotelName": "Hótel Holt",
+    "numGuests": 1,
+    "isMinibar": true,
+    "isWheelchairAccess": true,
+    "isRoomService": true,
+    "price": 1000
+  },
+  {
+    "roomID": 1,
+    "hotelName": "Hótel Reykjavík",
+    "numGuests": 1,
+    "isMinibar": true,
+    "isWheelchairAccess": true,
+    "isRoomService": true,
+    "price": 62000
+  },
+  {
+    "roomID": 1,
+    "hotelName": "Hótel 1",
+    "numGuests": 1,
+    "isMinibar": true,
+    "isWheelchairAccess": true,
+    "isRoomService": true,
+    "price": 99000
+  },
+  {
+    "roomID": 1,
+    "hotelName": "Hótel 2",
+    "numGuests": 1,
+    "isMinibar": true,
+    "isWheelchairAccess": true,
+    "isRoomService": true,
+    "price": 600
+  }
+]

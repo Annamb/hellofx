@@ -3,78 +3,72 @@
    "city": "Reykjavik",
    "hotelName": "Icelandic Apartments",
    "rating": 9.2,
-   "price": 16400,
    "stars": 5,
-   "phonenumber": "6224545",
-   "emailadress": "ia@ia.is",     
+   "phoneNumber": "6224545",
+   "emailAddress": "ia@ia.is",
    "address": "Suðurlandsvegur 2",
    "restaurant": true,
    "roomService": true,
-   "airportpickup": false
+   "airportPickup": false
  },
  {
    "city": "Reykjavik",
    "hotelName": "Fosshótel",
    "rating": 8.2,
-   "price": 18400,
    "stars": 4,
-   "phonenumber": "6224545",
-   "emailadress": "fake@mail.is",
+   "phoneNumber": "6224545",
+   "emailAddress": "fake@mail.is",
    "address": "Stígarvegur 102",
    "restaurant": true,
    "roomService": false,
-   "airportpickup": false
+   "airportPickup": false
  },
  {
    "city": "Reykjavik",
    "hotelName": "Hótel Holt",
    "rating": 7.2,
-   "price": 19400,
    "stars": 3,
-   "phonenumber": "6224545",
-   "emailadress": "gervi@postur.is",
+   "phoneNumber": "6224545",
+   "emailAddress": "gervi@postur.is",
    "address": "Lækjargata 22",
    "restaurant": false,
    "roomService": false,
-   "airportpickup": true
+   "airportPickup": true
  },
  {
    "city": "Reykjavik",
    "hotelName": "Hótel Reykjavík",
    "rating": 7.5,
-   "price": 16200,
    "stars": 4,
-   "phonenumber": "6224545",
-   "emailadress": "mmm@mail.is",
+   "phoneNumber": "6224545",
+   "emailAddress": "mmm@mail.is",
    "address": "Tjarnargata 1234",
    "restaurant": false,
    "roomService": false,
-   "airportpickup": false
+   "airportPickupairportPickup": false
  },
  {
    "city": "Reykjavik",
    "hotelName": "Hótel 1",
    "rating": 9.9,
-   "price": 11400,
    "stars": 5,
-   "phonenumber": "6224545",
-   "emailadress": "hotel@contact.is",
+   "phoneNumber": "6224545",
+   "emailAddress": "hotel@contact.is",
    "address": "Gervivegur 420",
    "restaurant": true,
    "roomService": true,
-   "airportpickup": true
+   "airportPickup": true
  },
  {
    "city": "Reykjavik",
    "hotelName": "Hótel 2",
    "rating": 5.7,
-   "price": 12700,
    "stars": 4,
-   "phonenumber": "6224545",
-   "emailadress": "this@mail.is",
+   "phoneNumber": "6224545",
+   "emailAddress": "this@mail.is",
    "address": "Urðahvarf 4",
    "restaurant": false,
    "roomService": true,
-   "airportpickup": false
+   "airportPickup": false
  }
 ]

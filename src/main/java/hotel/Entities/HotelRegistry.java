@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.*;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -20,11 +21,30 @@ public class HotelRegistry {
 	    Gson gson = new Gson();
 
         try {
-            BufferedReader br = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream("/Data/hotelgogn.json")));
-//            BufferedReader br = new BufferedReader(new FileReader(new File("/Data/hotelgogn.json")));
+            BufferedReader br = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream("/Data/hotelData.json")));
+//            BufferedReader br = new BufferedReader(new FileReader(new File("/Data/hotelData.json")));
 
             TypeToken<List<Hotel>> token = new TypeToken<List<Hotel>>() {};
             List<Hotel> hotels = gson.fromJson(br, token.getType());
+
+            BufferedReader bla = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream("/Data/roomData.json")));
+//            BufferedReader br = new BufferedReader(new FileReader(new File("/Data/hotelData.json")));
+
+            TypeToken<List<Room>> token2 = new TypeToken<List<Room>>() {};
+            List<Room> rooms = gson.fromJson(bla, token2.getType());
+            for (Hotel hotel: hotels) {
+                hotel.setHotelRooms(new ArrayList<>());
+            }
+
+            //Adding rooms to hotels
+            for (Room room: rooms) {
+                for (Hotel hotel: hotels) {
+                    if(hotel.getHotelName().equals(room.getHotelName())){
+                        hotel.addHotelRoom(room);
+                    }
+                }
+            }
+
 
             return hotels;
 
@@ -32,8 +52,4 @@ public class HotelRegistry {
 
         }
     }
-
-
-
-
 }

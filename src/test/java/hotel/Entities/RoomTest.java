@@ -21,10 +21,10 @@ public class RoomTest {
 
     @Before
     public void setUp() throws Exception {
-        room1 = new Room(1, 4, false, true);
+        room1 = new Room(1, "Fun", 4, false, true, 900);
         booking = new Booking(2, "John Smith",
                 "mail@person.com", "5812345", "2020-05-01", "2020-05-03");
-        room2 = new Room(2, 1, true, false, booking);
+        room2 = new Room(2,"Blal", 1, true, false, 9900, booking);
     }
 
     @After
