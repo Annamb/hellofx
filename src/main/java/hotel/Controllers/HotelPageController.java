@@ -43,7 +43,10 @@ public class HotelPageController {
     @FXML
     private TableView<Room> tableView;
 
-
+    /**
+     * Initialize hotel data when going to specific hotel screen
+     * @param hotel
+     */
     public void initData(Hotel hotel){
         this.selectedHotel = hotel;
         hotelNameLabel.setText(selectedHotel.getHotelName());
@@ -72,10 +75,19 @@ public class HotelPageController {
         tableView.setItems(roomsObservableList);
     }
 
+    /**
+     * Makes sure user clicked on room before he goes to booking
+     */
     public void userClickedOnTable(){
-        this.bookButton.setDisable(false);
+        Room selectedRoom = tableView.getSelectionModel().getSelectedItem();
+        if(selectedRoom != null) this.bookButton.setDisable(false);
     }
 
+    /**
+     * Go to the booking screen
+     * @param event
+     * @throws IOException
+     */
     public void handleBookRoom(ActionEvent event) throws IOException {
         System.out.println("Button pressed");
         FXMLLoader loader = new FXMLLoader();
@@ -94,6 +106,12 @@ public class HotelPageController {
         window.setScene(hotelListViewScene);
         window.show();
     }
+
+    /**
+     * Go back to hotel list screen
+     * @param event
+     * @throws IOException
+     */
     public void handleBackClick(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("/main.fxml"));

@@ -38,7 +38,7 @@ public class BookingPageController {
     }
 
     /**
-     * Go back to previous screen when clicking back button
+     * Go back to home screen when clicking back button
      * @param event
      */
     public void handleBackClick(ActionEvent event) throws IOException {
@@ -56,17 +56,11 @@ public class BookingPageController {
     }
 
     public void initialize(){
-//         datePicker = new DatePicker();
+        //Set up the date pickers
         startDatePicker.setDayCellFactory(picker -> new DateCell() {
             @Override
             public void updateItem(LocalDate date, boolean empty) {
                 super.updateItem(date, empty);
-                setDisable(empty || date.getDayOfWeek() == DayOfWeek.MONDAY);
-//
-//                for (Hotel hotel: selectedHotel.
-//                     ) {
-//
-//                }
                 // Disable all previous date cells
                 if (date.isBefore(LocalDate.now()))
                 {

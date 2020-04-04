@@ -76,6 +76,10 @@ public class Room {
 
     public List<Booking> getBookings() { return this.bookings; }
 
+    /**
+     * Returns list of booked dates for chosen room
+     * @return
+     */
     public List<LocalDate> getBookedDates(){
         List<LocalDate> bookedDates = new ArrayList<>();
         List<Booking> currBookings = this.getBookings();

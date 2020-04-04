@@ -23,7 +23,11 @@ public class MainController {
     private ListView<Hotel> hotelListView;
     HotelPageController hotelPageController;
 
-    @FXML
+    /**
+     * Goes to the hotel page of the selected hotel
+     * @param event
+     * @throws IOException
+     */
     public void handleMouseClick(MouseEvent event) throws IOException {
         Hotel clickedHotel = hotelListView.getSelectionModel().getSelectedItem();
         if (clickedHotel != null){
@@ -49,6 +53,9 @@ public class MainController {
 
     }
 
+    /**
+     * Initialize controller, fetch list of hotels and show
+     */
     public void initialize() {
         hotelRegistry = new HotelRegistry();
         hotelListLabel.setText("List of Hotels!" );

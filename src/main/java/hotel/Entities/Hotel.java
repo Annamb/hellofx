@@ -78,10 +78,7 @@ public class Hotel {
 
     public List<Room> getHotelRooms(){return this.hotelRooms;}
 
-    public void addHotelRoom(Room room){
-        System.out.println("Room added: " + room);
-        this.hotelRooms.add(room);
-    }
+    public void addHotelRoom(Room room){ this.hotelRooms.add(room); }
 
     public String getCity() {
         return city;
