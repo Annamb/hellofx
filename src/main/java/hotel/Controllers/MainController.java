@@ -26,24 +26,27 @@ public class MainController {
     @FXML
     public void handleMouseClick(MouseEvent event) throws IOException {
         Hotel clickedHotel = hotelListView.getSelectionModel().getSelectedItem();
-        System.out.println("Clicked on " + clickedHotel);
+        if (clickedHotel != null){
+            System.out.println("Clicked on " + clickedHotel);
 
 
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/hotelPage.fxml"));
-        Parent hotelListViewParent = loader.load();
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("/hotelPage.fxml"));
+            Parent hotelListViewParent = loader.load();
 
-        Scene hotelListViewScene = new Scene(hotelListViewParent);
+            Scene hotelListViewScene = new Scene(hotelListViewParent);
 
-        //access the controller and call a method
-        hotelPageController = loader.getController();
-        hotelPageController.initData(hotelListView.getSelectionModel().getSelectedItem());
+            //access the controller and call a method
+            hotelPageController = loader.getController();
+            hotelPageController.initData(clickedHotel);
 
-        //This line gets the Stage information
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+            //This line gets the Stage information
+            Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
 
-        window.setScene(hotelListViewScene);
-        window.show();
+            window.setScene(hotelListViewScene);
+            window.show();
+        }
+
     }
 
     public void initialize() {

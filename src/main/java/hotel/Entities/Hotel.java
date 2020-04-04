@@ -5,52 +5,84 @@
  */
 package hotel.Entities;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author Annam
  */
 public class Hotel {
-    private String city, hotelName,phonenumber,emailadress,address ;
+    private String city, hotelName, phoneNumber, emailAddress,address ;
     private double rating;
-    private int price,stars;
-    private boolean restaurant,roomService,airportpickup;
-    private HotelRegistry hotelRegistry;
+    private int stars;
+    private boolean restaurant,roomService, airportPickup;
+    private List<Room> hotelRooms;
 
     @Override
     public String toString(){
         return (this.hotelName + ", " + this.city);
     }
-    public Hotel(String city, String hotelName, String phonenumber, String emailadress, String address, double rating, int price, int stars, boolean restaurant, boolean roomService, boolean airportpickup) {
-        hotelRegistry = new HotelRegistry();
 
+    /**
+     * Constructor
+     * @param city
+     * @param hotelName
+     * @param phoneNumber
+     * @param emailAddress
+     * @param address
+     * @param rating
+     * @param stars
+     * @param restaurant
+     * @param roomService
+     * @param airportPickup
+     */
+    public Hotel(String city, String hotelName, String phoneNumber, String emailAddress, String address,
+                 double rating, int stars, boolean restaurant, boolean roomService, boolean airportPickup) {
         this.city = city;
         this.hotelName = hotelName;
-        this.phonenumber = phonenumber;
-        this.emailadress = emailadress;
+        this.phoneNumber = phoneNumber;
+        this.emailAddress = emailAddress;
         this.address = address;
         this.rating = rating;
-        this.price = price;
         this.stars = stars;
         this.restaurant = restaurant;
         this.roomService = roomService;
-        this.airportpickup = airportpickup;
+        this.airportPickup = airportPickup;
+        this.hotelRooms = new ArrayList<>();
     }
 
-    public Hotel(String city, String hotelName, String phonenumber, String emailadress, String address) {
-        hotelRegistry = new HotelRegistry();
-
+    /**
+     * Constructer
+     * @param city
+     * @param hotelName
+     * @param phoneNumber
+     * @param emailAddress
+     * @param address
+     */
+    public Hotel(String city, String hotelName, String phoneNumber, String emailAddress, String address) {
         this.city = city;
         this.hotelName = hotelName;
-        this.phonenumber = phonenumber;
-        this.emailadress = emailadress;
+        this.phoneNumber = phoneNumber;
+        this.emailAddress = emailAddress;
         this.address = address;
         this.rating = 0.0;
-        this.price = 0;
         this.stars = 0;
         this.restaurant = false;
         this.roomService = false;
-        this.airportpickup = false;
+        this.airportPickup = false;
+        this.hotelRooms = new ArrayList<>();
     }
+
+    public void setHotelRooms(List<Room> hotelRooms) { this.hotelRooms = hotelRooms; }
+
+    public List<Room> getHotelRooms(){return this.hotelRooms;}
+
+    public void addHotelRoom(Room room){
+        System.out.println("Room added: " + room);
+        this.hotelRooms.add(room);
+    }
+
     public String getCity() {
         return city;
     }
@@ -67,20 +99,20 @@ public class Hotel {
         this.hotelName = hotelName;
     }
 
-    public String getPhonenumber() {
-        return phonenumber;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setPhonenumber(String phonenumber) {
-        this.phonenumber = phonenumber;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
-    public String getEmailadress() {
-        return emailadress;
+    public String getEmailAddress() {
+        return emailAddress;
     }
 
-    public void setEmailadress(String emailadress) {
-        this.emailadress = emailadress;
+    public void setEmailAddress(String emailAddress) {
+        this.emailAddress = emailAddress;
     }
 
     public String getAddress() {
@@ -97,14 +129,6 @@ public class Hotel {
 
     public void setRating(double rating) {
         this.rating = rating;
-    }
-
-    public int getPrice() {
-        return price;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
     }
 
     public int getStars() {
@@ -131,12 +155,12 @@ public class Hotel {
         this.roomService = roomService;
     }
 
-    public boolean isAirportpickup() {
-        return airportpickup;
+    public boolean isAirportPickup() {
+        return airportPickup;
     }
 
-    public void setAirportpickup(boolean airportpickup) {
-        this.airportpickup = airportpickup;
+    public void setAirportPickup(boolean airportPickup) {
+        this.airportPickup = airportPickup;
     }
 
     
