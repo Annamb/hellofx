@@ -1,20 +1,19 @@
 package hotel.Controllers;
 
-import hotel.Entities.Hotel;
 import hotel.Entities.Room;
+import javafx.beans.binding.BooleanBinding;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.DateCell;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
-import javax.swing.colorchooser.DefaultColorSelectionModel;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.Comparator;
@@ -31,7 +30,14 @@ public class BookingPageController {
     private DatePicker startDatePicker;
     @FXML
     private DatePicker endDatePicker;
-
+    @FXML
+    private TextField  personNameTextField;
+    @FXML
+    private TextField phoneNumberTextField;
+    @FXML
+    private TextField emailTextField;
+    @FXML
+    private Button bookRoomButton;
     /**
      * Initialize selected Hotel
      * @param room
@@ -59,7 +65,21 @@ public class BookingPageController {
         window.show();
     }
 
-    public void initialize(){
+
+    /**
+     * Bætir booking við selectedroom en geymir ekki á milli scene
+     * TODO Mögulega vista room/hotel í json skjalinu með Gson? Veit ekki hversu erfitt það er
+     */
+    public void bookRoomAction(){
+        String personName = personNameTextField.getText();
+        String phoneNumber = phoneNumberTextField.getText();
+        String email = emailTextField.getText();
+        String startDate = startDatePicker.getValue().toString();
+        String endDate = endDatePicker.getValue().toString();
+        this.selectedRoom.addBooking(personName, email, phoneNumber, startDate, endDate);
+    }
+
+    public void setupDatePickers(){
         //Set up the date pickers
         startDatePicker.setDayCellFactory(picker -> new DateCell() {
             @Override
@@ -70,6 +90,7 @@ public class BookingPageController {
                 // Disable all booked dates and color red
                 List<LocalDate> dates = selectedRoom.getBookedDates();
                 for (LocalDate localDate: dates) {
+                    System.out.println(localDate);
                     if (date.equals(localDate)){
                         this.setDisable(true);
                         this.setTextFill(Color.RED);
@@ -118,6 +139,40 @@ public class BookingPageController {
                 {
                     this.setTextFill(Color.RED);
                     this.setDisable(true);
+                }
+            }
+        });
+    }
+
+    public void initialize(){
+        setupDatePickers();
+
+        // Passar að búið sé að velja gildi
+        BooleanBinding bb = new BooleanBinding() {
+            {
+                super.bind(personNameTextField.textProperty(),
+                        phoneNumberTextField.textProperty(), emailTextField.textProperty(),
+                        startDatePicker.valueProperty(), endDatePicker.valueProperty());
+            }
+
+            @Override
+            protected boolean computeValue() {
+                return (personNameTextField.getText().isEmpty()
+                        || phoneNumberTextField.getText().isEmpty()
+                        || emailTextField.getText().isEmpty()
+                        || startDatePicker.getValue() == null
+                        || endDatePicker.getValue() == null );
+            }
+        };
+        bookRoomButton.disableProperty().bind(bb);
+
+        // force the field to be numeric only
+        phoneNumberTextField.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue,
+                                String newValue) {
+                if (!newValue.matches("\\d*")) {
+                    phoneNumberTextField.setText(newValue.replaceAll("[^\\d]", ""));
                 }
             }
         });
