@@ -1,6 +1,7 @@
 package hotel.Controllers;
 
 import hotel.Entities.Hotel;
+import hotel.Entities.Room;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,17 +11,20 @@ import javafx.scene.Scene;
 import javafx.scene.control.DateCell;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
+import javax.swing.colorchooser.DefaultColorSelectionModel;
 import java.io.IOException;
-import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.util.Comparator;
+import java.util.List;
 
 /**
  *
  */
 public class BookingPageController {
-    private Hotel selectedHotel;
+    private Room selectedRoom;
     @FXML
     private Label bookingTitleLabel;
     @FXML
@@ -30,11 +34,11 @@ public class BookingPageController {
 
     /**
      * Initialize selected Hotel
-     * @param hotel
+     * @param room
      */
-    public void initData(Hotel hotel){
-        this.selectedHotel = hotel;
-        bookingTitleLabel.setText("Book room at " + selectedHotel.getHotelName() + "!");
+    public void initData(Room room){
+        this.selectedRoom = room;
+        bookingTitleLabel.setText("Book room at " + selectedRoom.getHotelName() + "!");
     }
 
     /**
@@ -61,14 +65,54 @@ public class BookingPageController {
             @Override
             public void updateItem(LocalDate date, boolean empty) {
                 super.updateItem(date, empty);
-                // Disable all previous date cells
+                this.setDisable(false);
+                this.setTextFill(Color.BLACK);
+                // Disable all booked dates and color red
+                List<LocalDate> dates = selectedRoom.getBookedDates();
+                for (LocalDate localDate: dates) {
+                    if (date.equals(localDate)){
+                        this.setDisable(true);
+                        this.setTextFill(Color.RED);
+                    }
+                }
+                // Disable all previous date cells and color blue
                 if (date.isBefore(LocalDate.now()))
                 {
+                    this.setTextFill(Color.BLUE);
                     this.setDisable(true);
                 }
             }
         });
         startDatePicker.setEditable(false);
-        endDatePicker.setDayCellFactory(startDatePicker.getDayCellFactory());
+//        endDatePicker.setDayCellFactory(startDatePicker.getDayCellFactory());
+        endDatePicker.setDayCellFactory(picker -> new DateCell() {
+            @Override
+            public void updateItem(LocalDate date, boolean empty) {
+                super.updateItem(date, empty);
+                this.setDisable(false);
+                this.setTextFill(Color.BLACK);
+                // Disable all booked dates
+                List<LocalDate> dates = selectedRoom.getBookedDates();
+                for (LocalDate localDate: dates) {
+                    if (date.equals(localDate)){
+                        this.setDisable(true);
+                        this.setTextFill(Color.RED);
+                    }
+                }
+                // Disable all date cells before start date
+                if (date.isBefore(startDatePicker.getValue()))
+                {
+                    this.setTextFill(Color.BLUE);
+                    this.setDisable(true);
+                }
+                dates.sort(Comparator.naturalOrder());
+                // Disable all dates after first booked date
+                if (date.isAfter(dates.get(0)))
+                {
+                    this.setTextFill(Color.BLUE);
+                    this.setDisable(true);
+                }
+            }
+        });
     }
 }

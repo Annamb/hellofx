@@ -43,6 +43,8 @@ public class HotelPageController {
     @FXML
     private TableView<Room> tableView;
 
+    private Room selectedRoom;
+
     /**
      * Initialize hotel data when going to specific hotel screen
      * @param hotel
@@ -79,7 +81,7 @@ public class HotelPageController {
      * Makes sure user clicked on room before he goes to booking
      */
     public void userClickedOnTable(){
-        Room selectedRoom = tableView.getSelectionModel().getSelectedItem();
+        selectedRoom = tableView.getSelectionModel().getSelectedItem();
         if(selectedRoom != null) this.bookButton.setDisable(false);
     }
 
@@ -98,7 +100,7 @@ public class HotelPageController {
 
         //access the controller and call a method
         bookingPageController = loader.getController();
-        bookingPageController.initData(this.selectedHotel);
+        bookingPageController.initData(this.selectedRoom);
 
         //This line gets the Stage information
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
