@@ -91,25 +91,32 @@ public class BookingPageController {
                 super.updateItem(date, empty);
                 this.setDisable(false);
                 this.setTextFill(Color.BLACK);
+                LocalDate startDate = startDatePicker.getValue();
+                if (startDate == null) startDate = LocalDate.now();
+                LocalDate maxEndDate = LocalDate.MAX;
                 // Disable all booked dates
                 List<LocalDate> dates = selectedRoom.getBookedDates();
-                for (LocalDate localDate: dates) {
-                    if (date.equals(localDate)){
+                dates.sort(Comparator.naturalOrder());
+
+                for (LocalDate bookedDate: dates) {
+                    if (date.equals(bookedDate)){
                         this.setDisable(true);
                         this.setTextFill(Color.RED);
                     }
+                    if ( bookedDate.isAfter(startDate) && bookedDate.isBefore(maxEndDate)) {
+                        maxEndDate = bookedDate;
+                    }
                 }
                 // Disable all date cells before start date
-                if (date.isBefore(startDatePicker.getValue()))
+                if (date.isBefore(startDate))
                 {
                     this.setTextFill(Color.BLUE);
                     this.setDisable(true);
                 }
-                dates.sort(Comparator.naturalOrder());
-                // Disable all dates after first booked date
-                if (date.isAfter(dates.get(0)))
+                // Disable all dates between start date and  next booked date
+                if (date.isAfter(maxEndDate))
                 {
-                    this.setTextFill(Color.BLUE);
+                    this.setTextFill(Color.RED);
                     this.setDisable(true);
                 }
             }
