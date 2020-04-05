@@ -38,12 +38,15 @@ public class HotelRegistry {
 
             //Adding rooms to hotels
             for (Room room: rooms) {
+                room.setBookings(new ArrayList<>());
                 for (Hotel hotel: hotels) {
                     if(hotel.getHotelName().equals(room.getHotelName())){
                         hotel.addHotelRoom(room);
                     }
                 }
             }
+            rooms.get(0).addBooking("Name Name", "mail@blala.com", "112233", "2020-05-01", "2020-05-03");
+
 
 
             return hotels;
