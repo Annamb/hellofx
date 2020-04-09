@@ -20,7 +20,7 @@
   {
     "roomID": 1,
     "hotelName": "Fosshótel",
-    "numGuests": 1,
+    "numGuests": 2,
     "isMinibar": true,
     "isWheelchairAccess": true,
     "isRoomService": true,
@@ -29,7 +29,7 @@
   {
     "roomID": 1,
     "hotelName": "Hótel Holt",
-    "numGuests": 1,
+    "numGuests": 2,
     "isMinibar": true,
     "isWheelchairAccess": true,
     "isRoomService": true,

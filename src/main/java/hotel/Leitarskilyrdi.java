@@ -4,13 +4,20 @@ public class Leitarskilyrdi {
     private int stars;
     private String city;
     private String leitarstrengur;
-
-
+    private int numGuest;
 
     public Leitarskilyrdi() {
         this.stars = 0;
         this.city = null;
         this.leitarstrengur=null;
+        this.numGuest=0;
+    }
+    public int getNumGuest() {
+        return numGuest;
+    }
+
+    public void setNumGuest(int numGuest) {
+        this.numGuest = numGuest;
     }
 
     public String getLeitarstrengur() {

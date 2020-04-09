@@ -39,7 +39,7 @@ public class MainController {
     private Leitarskilyrdi leitarskilyrdi;
     private leit hotelleit;
     private List<Hotel> hotels;
-    private boolean stjornurVal,cityVal,leitarstrengurVal;
+    private boolean stjornurVal,cityVal,leitarstrengurVal,numGuestVal;
     /**
      * Goes to the hotel page of the selected hotel
      * @param event
@@ -69,14 +69,7 @@ public class MainController {
         }
 
     }
-/*
-    @FXML
-    private void stjornurBoxHandler(ActionEvent event) {
-        Object selectedItem = stjornurBox.getValue();
-        leitarskilyrdi.setStars(Integer.parseInt(selectedItem.toString()));
 
-
-    }*/
     /**
      * Initialize controller, fetch list of hotels and show
      */
@@ -99,15 +92,11 @@ public class MainController {
         baerBox.getSelectionModel().select(0);
         cityVal=false;
 
+        numGuestBox.getItems().removeAll(numGuestBox.getItems());
+        numGuestBox.getItems().addAll("1","2","3","4","5","6");
+        numGuestBox.getSelectionModel().select(0);
         leitarstrengurVal=true;
-
-        /*leitTextField.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                String leitarstrengur = leitTextField.getText();
-                leitarskilyrdi.setLeitarstrengur(leitarstrengur);
-            }
-        });*/
+        numGuestVal=false;
     }
 
     public void stjornurBoxHandler(javafx.event.ActionEvent actionEvent) {
@@ -120,10 +109,12 @@ public class MainController {
         Object selectedItem = baerBox.getValue();
         leitarskilyrdi.setCity(selectedItem.toString());
         cityVal=true;
-        System.out.println(selectedItem.toString());
     }
 
     public void numGuestBoxHandler(ActionEvent actionEvent) {
+        Object selectedItem = numGuestBox.getValue();
+        leitarskilyrdi.setNumGuest(Integer.parseInt(selectedItem.toString()));
+        numGuestVal=true;
     }
 
     public void leitaButtonHandler(ActionEvent actionEvent) {
@@ -135,7 +126,7 @@ public class MainController {
 
         leitarskilyrdi.setLeitarstrengur(leitarstrengur);
 
-        hotels = hotelleit.leitaHotel(leitarskilyrdi,stjornurVal,cityVal,leitarstrengurVal);
+        hotels = hotelleit.leitaHotel(leitarskilyrdi,stjornurVal,cityVal,leitarstrengurVal,numGuestVal);
 
         hotelListView.getItems().clear();
 
