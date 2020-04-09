@@ -13,6 +13,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
@@ -31,12 +32,14 @@ public class MainController {
     private ComboBox<String> baerBox;
     @FXML
     private ComboBox<String> numGuestBox;
+    @FXML
+    private TextField leitTextField;
 
     HotelPageController hotelPageController;
     private Leitarskilyrdi leitarskilyrdi;
     private leit hotelleit;
     private List<Hotel> hotels;
-    private boolean stjornurVal,cityVal;
+    private boolean stjornurVal,cityVal,leitarstrengurVal;
     /**
      * Goes to the hotel page of the selected hotel
      * @param event
@@ -95,6 +98,16 @@ public class MainController {
         baerBox.getItems().addAll("Reykjavik","Kopavogur");
         baerBox.getSelectionModel().select(0);
         cityVal=false;
+
+        leitarstrengurVal=true;
+
+        /*leitTextField.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                String leitarstrengur = leitTextField.getText();
+                leitarskilyrdi.setLeitarstrengur(leitarstrengur);
+            }
+        });*/
     }
 
     public void stjornurBoxHandler(javafx.event.ActionEvent actionEvent) {
@@ -114,10 +127,19 @@ public class MainController {
     }
 
     public void leitaButtonHandler(ActionEvent actionEvent) {
-        hotels = hotelleit.leitaHotel(leitarskilyrdi,stjornurVal,cityVal);
+        String leitarstrengur = leitTextField.getText();
+        System.out.println(leitarstrengur);
+        if(leitarstrengur.isEmpty()){
+            leitarstrengurVal=false;
+        }
+
+        leitarskilyrdi.setLeitarstrengur(leitarstrengur);
+
+        hotels = hotelleit.leitaHotel(leitarskilyrdi,stjornurVal,cityVal,leitarstrengurVal);
 
         hotelListView.getItems().clear();
 
         hotelListView.getItems().addAll(hotels);
+
     }
 }

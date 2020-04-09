@@ -24,6 +24,7 @@
                   <VBox layoutY="14.0" prefHeight="58.0" prefWidth="180.0">
                      <children>
                         <Label text="Leita" />
+                        <TextField fx:id="leitTextField" prefHeight="25.0" prefWidth="100.0" />
                      </children>
                   </VBox>
                   <VBox layoutY="198.0" prefHeight="58.0" prefWidth="180.0">

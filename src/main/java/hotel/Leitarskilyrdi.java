@@ -3,12 +3,23 @@ package hotel;
 public class Leitarskilyrdi {
     private int stars;
     private String city;
+    private String leitarstrengur;
+
+
 
     public Leitarskilyrdi() {
         this.stars = 0;
         this.city = null;
+        this.leitarstrengur=null;
     }
 
+    public String getLeitarstrengur() {
+        return leitarstrengur;
+    }
+
+    public void setLeitarstrengur(String leitarstrengur) {
+        this.leitarstrengur = leitarstrengur;
+    }
     public int getStars() {
         return stars;
     }
