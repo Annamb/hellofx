@@ -27,6 +27,15 @@
     "price": 6300
   },
   {
+    "roomID": 2,
+    "hotelName": "Fosshótel",
+    "numGuests": 7,
+    "isMinibar": true,
+    "isWheelchairAccess": true,
+    "isRoomService": true,
+    "price": 630000
+  },
+  {
     "roomID": 1,
     "hotelName": "Hótel Holt",
     "numGuests": 2,
@@ -45,9 +54,54 @@
     "price": 62000
   },
   {
+    "roomID": 2,
+    "hotelName": "Hótel Reykjavík",
+    "numGuests": 5,
+    "isMinibar": true,
+    "isWheelchairAccess": true,
+    "isRoomService": true,
+    "price": 65000
+  },
+  {
+    "roomID": 3,
+    "hotelName": "Hótel Reykjavík",
+    "numGuests": 2,
+    "isMinibar": true,
+    "isWheelchairAccess": true,
+    "isRoomService": true,
+    "price": 63000
+  },
+  {
+    "roomID": 4,
+    "hotelName": "Hótel Reykjavík",
+    "numGuests": 5,
+    "isMinibar": true,
+    "isWheelchairAccess": true,
+    "isRoomService": true,
+    "price": 64000
+  },
+  {
+    "roomID": 5,
+    "hotelName": "Hótel Reykjavík",
+    "numGuests": 8,
+    "isMinibar": true,
+    "isWheelchairAccess": true,
+    "isRoomService": true,
+    "price": 800000
+  },
+  {
     "roomID": 1,
     "hotelName": "Hótel 1",
     "numGuests": 1,
+    "isMinibar": true,
+    "isWheelchairAccess": true,
+    "isRoomService": true,
+    "price": 99000
+  },
+  {
+    "roomID": 2,
+    "hotelName": "Hótel 1",
+    "numGuests": 10,
     "isMinibar": true,
     "isWheelchairAccess": true,
     "isRoomService": true,
@@ -61,5 +115,122 @@
     "isWheelchairAccess": true,
     "isRoomService": true,
     "price": 600
+  },
+  {
+    "roomID": 2,
+    "hotelName": "Hótel 2",
+    "numGuests": 5,
+    "isMinibar": true,
+    "isWheelchairAccess": true,
+    "isRoomService": true,
+    "price": 1200
+  },
+  {
+    "roomID": 3,
+    "hotelName": "Hótel 2",
+    "numGuests": 3,
+    "isMinibar": true,
+    "isWheelchairAccess": true,
+    "isRoomService": true,
+    "price": 600
+  },
+  {
+    "roomID": 1,
+    "hotelName": "Hótel Mos",
+    "numGuests": 5,
+    "isMinibar": true,
+    "isWheelchairAccess": true,
+    "isRoomService": true,
+    "price": 5500
+  },
+  {
+    "roomID": 2,
+    "hotelName": "Hótel Mos",
+    "numGuests": 10,
+    "isMinibar": true,
+    "isWheelchairAccess": true,
+    "isRoomService": true,
+    "price": 999000
+  },
+  {
+    "roomID": 3,
+    "hotelName": "Hótel Mos",
+    "numGuests": 2,
+    "isMinibar": true,
+    "isWheelchairAccess": true,
+    "isRoomService": true,
+    "price": 5400
+  },
+  {
+    "roomID": 1,
+    "hotelName": "Hotel Leira",
+    "numGuests": 2,
+    "isMinibar": true,
+    "isWheelchairAccess": false,
+    "isRoomService": true,
+    "price": 99000
+  },
+  {
+    "roomID": 2,
+    "hotelName": "Hotel Leira",
+    "numGuests": 2,
+    "isMinibar": true,
+    "isWheelchairAccess": false,
+    "isRoomService": true,
+    "price": 99000
+  },
+  {
+    "roomID": 1,
+    "hotelName": "Hótel Garðabær",
+    "numGuests": 2,
+    "isMinibar": true,
+    "isWheelchairAccess": false,
+    "isRoomService": true,
+    "price": 100000
+  },
+  {
+    "roomID": 1,
+    "hotelName": "Grímur Hótel",
+    "numGuests": 5,
+    "isMinibar": false,
+    "isWheelchairAccess": false,
+    "isRoomService": true,
+    "price": 6000
+  },
+  {
+    "roomID": 2,
+    "hotelName": "Grímur Hótel",
+    "numGuests": 4,
+    "isMinibar": false,
+    "isWheelchairAccess": false,
+    "isRoomService": true,
+    "price": 5000
+  },
+  {
+    "roomID": 1,
+    "hotelName": "Hótel heiðmörk",
+    "numGuests": 1,
+    "isMinibar": false,
+    "isWheelchairAccess": false,
+    "isRoomService": true,
+    "price": 7990
+  },
+  {
+    "roomID": 2,
+    "hotelName": "Hótel Heiðmörk",
+    "numGuests": 2,
+    "isMinibar": false,
+    "isWheelchairAccess": false,
+    "isRoomService": true,
+    "price": 8990
+  },
+  {
+    "roomID": 1,
+    "hotelName": "Hótel Smári",
+    "numGuests": 3,
+    "isMinibar": false,
+    "isWheelchairAccess": false,
+    "isRoomService": true,
+    "price": 50999
   }
 ]

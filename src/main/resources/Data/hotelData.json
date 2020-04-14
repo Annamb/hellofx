@@ -48,7 +48,7 @@
    "airportPickupairportPickup": false
  },
  {
-   "city": "Kopavogur",
+   "city": "Kópavogur",
    "hotelName": "Hótel 1",
    "rating": 9.9,
    "stars": 5,
@@ -70,5 +70,78 @@
    "restaurant": false,
    "roomService": true,
    "airportPickup": false
- }
+ },
+  {
+    "city": "Kópavogur",
+    "hotelName": "Hótel Smári",
+    "rating": 6.0,
+    "stars": 4,
+    "phoneNumber": "6224546",
+    "emailAddress": "hotelsamri@contact.is",
+    "address": "Hlíðarsmári 20",
+    "restaurant": true,
+    "roomService": true,
+    "airportPickup": false
+  },
+  {
+    "city": "Kópavogur",
+    "hotelName": "Hótel Heiðmörk",
+    "rating": 4.4,
+    "stars": 4,
+    "phoneNumber": "6224566",
+    "emailAddress": "hotelheidmork@contact.is",
+    "address": "Hlíðarsmári 2",
+    "restaurant": true,
+    "roomService": true,
+    "airportPickup": true
+  },
+  {
+    "city": "Kópavogur",
+    "hotelName": "Grímur Hótel",
+    "rating": 8.8,
+    "stars": 3,
+    "phoneNumber": "6225546",
+    "emailAddress": "grimurhotel@contact.is",
+    "address": "Hlíðarsmári 9",
+    "restaurant": true,
+    "roomService": true,
+    "airportPickup": true
+  },
+  {
+    "city": "Garðabær",
+    "hotelName": "Hótel Garðabær",
+    "rating": 6.0,
+    "stars": 4,
+    "phoneNumber": "6554546",
+    "emailAddress": "hotelgarda@contact.is",
+    "address": "Furulundur 20",
+    "restaurant": true,
+    "roomService": true,
+    "airportPickup": true
+  },
+  {
+    "city": "Garðabær",
+    "hotelName": "Hotel Leira",
+    "rating": 6.0,
+    "stars": 4,
+    "phoneNumber": "6554577",
+    "emailAddress": "hotelleira@contact.is",
+    "address": "Vetrarbraut 20",
+    "restaurant": false,
+    "roomService": true,
+    "airportPickup": false
+  },
+  {
+    "city": "Mosfellsbær",
+    "hotelName": "Hótel Mos",
+    "rating": 3.0,
+    "stars": 2,
+    "phoneNumber": "6554888",
+    "emailAddress": "hotelgarda@contact.is",
+    "address": "Laxatunga 20",
+    "restaurant": true,
+    "roomService": true,
+    "airportPickup": true
+  }
+
 ]

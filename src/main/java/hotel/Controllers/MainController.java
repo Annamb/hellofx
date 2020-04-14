@@ -88,12 +88,12 @@ public class MainController {
         stjornurVal=false;
 
         baerBox.getItems().removeAll(baerBox.getItems());
-        baerBox.getItems().addAll("Reykjavik","Kopavogur");
+        baerBox.getItems().addAll("Reykjavik","Kópavogur","Mosfellsbær","Garðabær");
         baerBox.getSelectionModel().select(0);
         cityVal=false;
 
         numGuestBox.getItems().removeAll(numGuestBox.getItems());
-        numGuestBox.getItems().addAll("1","2","3","4","5","6");
+        numGuestBox.getItems().addAll("1","2","3","4","5","6","7","8","9","10");
         numGuestBox.getSelectionModel().select(0);
         leitarstrengurVal=true;
         numGuestVal=false;
