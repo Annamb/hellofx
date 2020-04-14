@@ -136,6 +136,11 @@ public class leit {
                     }
                 }
             }
+            if(stjornur==false && city==false && leitarstrengur==false && numGuest==false){
+
+                        myList.add(hotel.get(i));
+
+            }
 
         }
         return myList;

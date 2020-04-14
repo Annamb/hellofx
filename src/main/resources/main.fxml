@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
@@ -14,26 +15,46 @@
                         <Label text="Stjörnur" />
                         <ComboBox fx:id="stjornurBox" onAction="#stjornurBoxHandler" prefWidth="150.0" />
                      </children>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
                   </VBox>
                   <VBox layoutY="132.0" prefHeight="66.0" prefWidth="180.0">
                      <children>
                         <Label text="Bær" />
                         <ComboBox fx:id="baerBox" onAction="#baerBoxHandler" prefWidth="150.0" />
                      </children>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
                   </VBox>
                   <VBox layoutY="14.0" prefHeight="58.0" prefWidth="180.0">
                      <children>
                         <Label text="Leita" />
-                        <TextField fx:id="leitTextField" prefHeight="25.0" prefWidth="100.0" />
+                        <TextField fx:id="leitTextField" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="150.0" />
                      </children>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
                   </VBox>
                   <VBox layoutY="198.0" prefHeight="58.0" prefWidth="180.0">
                      <children>
                         <Label text="Fjöldi gesta" />
                         <ComboBox fx:id="numGuestBox" onAction="#numGuestBoxHandler" prefWidth="150.0" />
                      </children>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
                   </VBox>
-                  <Button fx:id="leitaButton" layoutX="58.0" layoutY="358.0" mnemonicParsing="false" onAction="#leitaButtonHandler" text="Leita" textFill="WHITE" />
+                  <HBox layoutX="14.0" layoutY="306.0" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="leitaButton" mnemonicParsing="false" onAction="#leitaButtonHandler" text="Leita" />
+                        <Button fx:id="hreinsaButton" mnemonicParsing="false" onAction="#hreinsaButtonHandler" text="Hreinsa leit">
+                           <HBox.margin>
+                              <Insets left="30.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children></HBox>
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">

@@ -133,4 +133,10 @@ public class MainController {
         hotelListView.getItems().addAll(hotels);
 
     }
+    public void hreinsaButtonHandler(ActionEvent actionEvent){
+        hotels = hotelleit.leitaHotel(leitarskilyrdi,false,false,false,false);
+        hotelListView.getItems().clear();
+        hotelListView.getItems().addAll(hotels);
+        System.out.println("leit hreinsud");
+    }
 }
