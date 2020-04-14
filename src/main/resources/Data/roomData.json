@@ -18,7 +18,7 @@
     "price": 10500
   },
   {
-    "roomID": 1,
+    "roomID": 3,
     "hotelName": "Fosshótel",
     "numGuests": 2,
     "isMinibar": true,
@@ -27,7 +27,7 @@
     "price": 6300
   },
   {
-    "roomID": 2,
+    "roomID": 4,
     "hotelName": "Fosshótel",
     "numGuests": 7,
     "isMinibar": true,
@@ -36,7 +36,7 @@
     "price": 630000
   },
   {
-    "roomID": 1,
+    "roomID": 5,
     "hotelName": "Hótel Holt",
     "numGuests": 2,
     "isMinibar": true,
@@ -45,7 +45,7 @@
     "price": 1000
   },
   {
-    "roomID": 1,
+    "roomID": 6,
     "hotelName": "Hótel Reykjavík",
     "numGuests": 1,
     "isMinibar": true,
@@ -54,7 +54,7 @@
     "price": 62000
   },
   {
-    "roomID": 2,
+    "roomID": 7,
     "hotelName": "Hótel Reykjavík",
     "numGuests": 5,
     "isMinibar": true,
@@ -63,7 +63,7 @@
     "price": 65000
   },
   {
-    "roomID": 3,
+    "roomID": 8,
     "hotelName": "Hótel Reykjavík",
     "numGuests": 2,
     "isMinibar": true,
@@ -72,7 +72,7 @@
     "price": 63000
   },
   {
-    "roomID": 4,
+    "roomID": 9,
     "hotelName": "Hótel Reykjavík",
     "numGuests": 5,
     "isMinibar": true,
@@ -81,7 +81,7 @@
     "price": 64000
   },
   {
-    "roomID": 5,
+    "roomID": 10,
     "hotelName": "Hótel Reykjavík",
     "numGuests": 8,
     "isMinibar": true,
@@ -90,7 +90,7 @@
     "price": 800000
   },
   {
-    "roomID": 1,
+    "roomID": 11,
     "hotelName": "Hótel 1",
     "numGuests": 1,
     "isMinibar": true,
@@ -99,7 +99,7 @@
     "price": 99000
   },
   {
-    "roomID": 2,
+    "roomID": 12,
     "hotelName": "Hótel 1",
     "numGuests": 10,
     "isMinibar": true,
@@ -108,7 +108,7 @@
     "price": 99000
   },
   {
-    "roomID": 1,
+    "roomID": 13,
     "hotelName": "Hótel 2",
     "numGuests": 1,
     "isMinibar": true,
@@ -117,7 +117,7 @@
     "price": 600
   },
   {
-    "roomID": 2,
+    "roomID": 14,
     "hotelName": "Hótel 2",
     "numGuests": 5,
     "isMinibar": true,
@@ -126,7 +126,7 @@
     "price": 1200
   },
   {
-    "roomID": 3,
+    "roomID": 15,
     "hotelName": "Hótel 2",
     "numGuests": 3,
     "isMinibar": true,
@@ -135,7 +135,7 @@
     "price": 600
   },
   {
-    "roomID": 1,
+    "roomID": 16,
     "hotelName": "Hótel Mos",
     "numGuests": 5,
     "isMinibar": true,
@@ -144,7 +144,7 @@
     "price": 5500
   },
   {
-    "roomID": 2,
+    "roomID": 17,
     "hotelName": "Hótel Mos",
     "numGuests": 10,
     "isMinibar": true,
@@ -153,7 +153,7 @@
     "price": 999000
   },
   {
-    "roomID": 3,
+    "roomID": 18,
     "hotelName": "Hótel Mos",
     "numGuests": 2,
     "isMinibar": true,
@@ -162,7 +162,7 @@
     "price": 5400
   },
   {
-    "roomID": 1,
+    "roomID": 19,
     "hotelName": "Hotel Leira",
     "numGuests": 2,
     "isMinibar": true,
@@ -171,7 +171,7 @@
     "price": 99000
   },
   {
-    "roomID": 2,
+    "roomID": 20,
     "hotelName": "Hotel Leira",
     "numGuests": 2,
     "isMinibar": true,
@@ -180,7 +180,7 @@
     "price": 99000
   },
   {
-    "roomID": 1,
+    "roomID": 21,
     "hotelName": "Hótel Garðabær",
     "numGuests": 2,
     "isMinibar": true,
@@ -189,7 +189,7 @@
     "price": 100000
   },
   {
-    "roomID": 1,
+    "roomID": 22,
     "hotelName": "Grímur Hótel",
     "numGuests": 5,
     "isMinibar": false,
@@ -198,7 +198,7 @@
     "price": 6000
   },
   {
-    "roomID": 2,
+    "roomID": 23,
     "hotelName": "Grímur Hótel",
     "numGuests": 4,
     "isMinibar": false,
@@ -207,7 +207,7 @@
     "price": 5000
   },
   {
-    "roomID": 1,
+    "roomID": 24,
     "hotelName": "Hótel heiðmörk",
     "numGuests": 1,
     "isMinibar": false,
@@ -216,7 +216,7 @@
     "price": 7990
   },
   {
-    "roomID": 2,
+    "roomID": 25,
     "hotelName": "Hótel Heiðmörk",
     "numGuests": 2,
     "isMinibar": false,
@@ -225,7 +225,7 @@
     "price": 8990
   },
   {
-    "roomID": 1,
+    "roomID": 26,
     "hotelName": "Hótel Smári",
     "numGuests": 3,
     "isMinibar": false,

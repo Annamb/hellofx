@@ -1,5 +1,13 @@
 package hotel.Entities;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -76,10 +84,6 @@ public class Room {
 
     public List<Booking> getBookings() { return this.bookings; }
 
-    /**
-     * Returns list of booked dates for chosen room
-     * @return
-     */
     public List<LocalDate> getBookedDates(){
         List<LocalDate> bookedDates = new ArrayList<>();
         List<Booking> currBookings = this.getBookings();
@@ -88,9 +92,9 @@ public class Room {
                 bookedDates.add(bookedDate);
             }
         }
+
         return bookedDates;
     }
-
     public void setRoomID(int roomID) {
         this.roomID = roomID;
     }
@@ -125,5 +129,95 @@ public class Room {
 
     public void setBookings(List<Booking> bookings) {
         this.bookings = bookings;
+    }
+    private void parseBookingObject(JSONObject booking)
+    {
+        //Get booking object within list
+        JSONObject BookingObject = (JSONObject) booking.get("booking");
+
+        //Get booking name
+        String personName = (String) BookingObject.get("personName");
+        System.out.println(personName);
+
+        String phoneNumber = (String) BookingObject.get("phoneNumber");
+        System.out.println(phoneNumber);
+
+        String email = (String) BookingObject.get("email");
+        System.out.println(email);
+
+        String startDate = (String) BookingObject.get("startDate");
+        System.out.println(startDate);
+
+        String endDate = (String) BookingObject.get("endDate");
+        System.out.println(endDate);
+
+        String roomID =(String) BookingObject.get("roomID");
+        System.out.println(roomID);
+
+        LocalDate start = LocalDate.parse(startDate);
+        LocalDate end = LocalDate.parse(endDate);
+        List<LocalDate> bookedDates = new ArrayList<>();
+        while (!start.isAfter(end)) {
+            bookedDates.add(start);
+            start = start.plusDays(1);
+        }
+
+    }
+    public List<LocalDate> getBookedDates2(){
+        List<LocalDate> bookedDates = new ArrayList<>();
+        JSONArray allarbokanir;
+        allarbokanir=lesabokanir();
+        allarbokanir.forEach( bookin -> bookedDates.addAll(finnaherb( (JSONObject) bookin ) ));
+
+        return bookedDates;
+    }
+
+    private List<LocalDate> finnaherb(JSONObject booking) {
+        JSONObject BookingObject = (JSONObject) booking.get("booking");
+        Long roomIDcheck = (Long) BookingObject.get("roomID");
+        String startDate =(String) BookingObject.get("startDate");
+        String endDate =(String) BookingObject.get("endDate");
+        System.out.println(roomIDcheck);
+        System.out.println(this.getRoomID() == roomIDcheck );
+        List<LocalDate> booked2 = new ArrayList<>();
+
+        if(this.getRoomID() == roomIDcheck ){
+            System.out.println(this.getRoomID());
+            LocalDate start = LocalDate.parse(startDate);
+            LocalDate end = LocalDate.parse(endDate);
+            List<LocalDate> booked = new ArrayList<>();
+
+            while (!start.isAfter(end)) {
+                booked.add(start);
+                start = start.plusDays(1);
+            }
+            return booked;
+        }
+        return booked2;
+    }
+
+
+    public JSONArray lesabokanir(){
+        JSONParser jsonParser = new JSONParser();
+
+        try (FileReader reader = new FileReader("bookingData.json"))
+        {
+            //Read JSON file
+            Object obj = jsonParser.parse(reader);
+
+            JSONArray BookingList = (JSONArray) obj;
+            System.out.println(BookingList);
+            System.out.println("Vid f-rum inn i filereader");
+            return BookingList;
+
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }

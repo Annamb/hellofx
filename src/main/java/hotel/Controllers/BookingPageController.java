@@ -13,7 +13,14 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.Comparator;
@@ -38,6 +45,8 @@ public class BookingPageController {
     private TextField emailTextField;
     @FXML
     private Button bookRoomButton;
+
+    private JSONArray bookingList = new JSONArray();
     /**
      * Initialize selected Hotel
      * @param room
@@ -77,6 +86,32 @@ public class BookingPageController {
         String startDate = startDatePicker.getValue().toString();
         String endDate = endDatePicker.getValue().toString();
         this.selectedRoom.addBooking(personName, email, phoneNumber, startDate, endDate);
+        System.out.println("kallad a fall");
+
+        JSONObject BookingDetails = new JSONObject();
+        BookingDetails.put("personName", personName);
+        BookingDetails.put("phoneNumber", phoneNumber);
+        BookingDetails.put("email",email);
+        BookingDetails.put("startDate",startDate);
+        BookingDetails.put("endDate",endDate);
+        BookingDetails.put("roomID",this.selectedRoom.getRoomID());
+
+        JSONObject bookingObject = new JSONObject();
+        bookingObject.put("booking", BookingDetails);
+
+        //Add employees to list
+        bookingList=lesabokanir();
+        bookingList.add(bookingObject);
+
+        //Write JSON file
+        try (FileWriter file = new FileWriter("bookingData.json")) {
+
+            file.write(bookingList.toJSONString());
+            file.flush();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void setupDatePickers(){
@@ -88,7 +123,7 @@ public class BookingPageController {
                 this.setDisable(false);
                 this.setTextFill(Color.BLACK);
                 // Disable all booked dates and color red
-                List<LocalDate> dates = selectedRoom.getBookedDates();
+                List<LocalDate> dates = selectedRoom.getBookedDates2();
                 for (LocalDate localDate: dates) {
                     System.out.println(localDate);
                     if (date.equals(localDate)){
@@ -116,7 +151,7 @@ public class BookingPageController {
                 if (startDate == null) startDate = LocalDate.now();
                 LocalDate maxEndDate = LocalDate.MAX;
                 // Disable all booked dates
-                List<LocalDate> dates = selectedRoom.getBookedDates();
+                List<LocalDate> dates = selectedRoom.getBookedDates2();
                 dates.sort(Comparator.naturalOrder());
 
                 for (LocalDate bookedDate: dates) {
@@ -176,5 +211,27 @@ public class BookingPageController {
                 }
             }
         });
+    }
+    public JSONArray lesabokanir(){
+        JSONParser jsonParser = new JSONParser();
+
+        try (FileReader reader = new FileReader("bookingData.json"))
+        {
+            //Read JSON file
+            Object obj = jsonParser.parse(reader);
+
+            JSONArray BookingList = (JSONArray) obj;
+            System.out.println(BookingList);
+            return BookingList;
+          
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }
